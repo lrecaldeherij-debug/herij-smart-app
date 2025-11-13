@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
+import { app, analytics, auth, db } from './firebase-config';
+
 
 const App: React.FC = () => {
+    // Firebase Integration: app initialized with Firestore, Analytics, and Authentication
+  console.log('Firebase initialized for herij-smart project');
+
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [activeView, setActiveView] = useState<'general' | 'commercial' | 'financial' | 'rrhh' | 'production'>('general');
 
