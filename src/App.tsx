@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { app, analytics, auth, db } from './firebase-config';
+import TasksModule from './TasksModule';
 
 
 const App: React.FC = () => {
@@ -7,7 +8,7 @@ const App: React.FC = () => {
   console.log('Firebase initialized for herij-smart project');
 
   const [sidebarOpen, setSidebarOpen] = useState(true);
-  const [activeView, setActiveView] = useState<'general' | 'commercial' | 'financial' | 'rrhh' | 'production'>('general');
+  const [activeView, setActiveView] = useState<'general' | 'commercial' | 'financial' | 'rrhh' | 'product | 'tareas'ion'>('general');
 
   const renderContent = () => {
     switch (activeView) {
@@ -96,6 +97,9 @@ const App: React.FC = () => {
             </div>
           </div>
         );
+                  case 'tareas':
+        return <TasksModule />;
+
       default:
         return null;
     }
